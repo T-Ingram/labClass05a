@@ -103,7 +103,6 @@ function sumArray(sumArr) { //eslint-disable-line
   return [total, message]
 }
 
-
 const resultTwo = sumArray(testArray);
   console.log(resultTwo[1]); // Output: "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
@@ -125,11 +124,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  let product = 1
+  for (let i = 0; i< multArr.length; i++) {
+    product = multiply(product, multArr[i])[0];
+  }
 
+  let messageTwo = "The numbers " + multArr[0];
+  for (let i = 1; i < multArr.length; i++) {
+    messageTwo += ',' + multArr[i];
+  }
+  messageTwo += " have a product of " + product + ".";
+
+  return[product, messageTwo]
 }
-
+let testArrayTwo = [2, 3, 4];
+let resultThree = multiplyArray (testArrayTwo);
+  console.log(resultThree[1]);
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
